@@ -297,6 +297,18 @@ if (monthDay == 21) {  if (month == 3) {  lightsOn(HBA, 19);}}
 //Lights on!
 FastLED.show();
 
+  // pseudocode-ish for what happens when you click btnHour
+  // Assuming global variable is 'hour' and it's an INT
+
+int btnHourPressed(){
+   hour = (hour + 1) % 24 // In most languages % is modulus function (I think it's the same in C)
+}
+  // Again assuming global variable is 'minute' and it's an INT
+int btnMinutePressed() {
+  minute = ((minute + (5 - (minute % 5))) % 60)
+}
+  
+  
 //Wait ten seconds
 delay(1000);
 }
