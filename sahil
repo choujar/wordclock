@@ -1,0 +1,23 @@
+Alright, so I want HAPPY BIRTHDAY NAME (three separate groups of LEDs, defined by lines 142 and 143) to rapidly cycle through colours - a moving rainbow. I think the way to go is with the fill_rainbow() function in the FastLED library, but I had some trouble making it work. 
+
+documentation for the fill_rainbow is at http://fastled.io/docs/3.1/group___colorutils.html#details
+
+
+Lines 293 and 296 currently just light up the HAPPY BIRTHDAY NAME, but in the same colour as the rest of the text, so that looks shit.
+
+It should come on at (hour==6), so it doesn't tick over to midnight and blast out colour while in night mode (see below).
+
+
+
+The two time buttons (btnHour, btnMin) should increment the hour by 1 and the minutes by 5 (rounded to the nearest five).
+
+Additionally, I want to add two functions to the third button (btnColour):
+
+1. When you press it quickly (if time<=1000 ?), it toggles between a night mode (colour of all leds goes to ::Red and the brightness is dropped). It should also kill the Happy Birthday rainbow if that's happening. 
+
+2. When you hold it (if time>1000 ?) it gradually cycles through colours (presumably instead of CRGB you use CHSV and just ++ the H value) so you can pick the colour you want for your clock.
+
+
+So like any thoughts or ideas or code I'd be incredibly grateful for. I'll be home in about 4.5 - I'll hit you up then. Also be working most of tomorrow on it.
+
+THANKS BROSTOEVSKI
